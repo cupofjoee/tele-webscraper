@@ -2,6 +2,7 @@ import mechanize
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import http.cookiejar as cookie
+import text-processing as tp
 
 cj = cookie.CookieJar()
 br = mechanize.Browser()
@@ -25,4 +26,4 @@ texts = []
 for td in soup.find_all('td'):
     texts.append(td.text)
 
-print(texts)
+clean_data = tp.process_text(texts)
