@@ -12,7 +12,7 @@ br.set_cookiejar(cj)
 br.open("https://bms.ri.edu.sg/login.aspx")
 
 br.select_form(nr = 0)
-br.form['txtLoginID'] = '***REMOVED***'
+br.form['txtLoginID'] = '1234@gmail.com'
 br.form['txtPassword'] = '***REMOVED***'
 br.submit()
 
