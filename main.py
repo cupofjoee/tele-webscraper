@@ -21,4 +21,8 @@ br.open(attendance_url)
 
 htmltxt = br.response().read()
 soup = BeautifulSoup(htmltxt, 'lxml')
-print(soup.text)
+texts = []
+for td in soup.find_all('td'):
+    texts.append(td.text)
+
+print(texts)
