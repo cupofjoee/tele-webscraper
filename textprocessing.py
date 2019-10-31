@@ -14,6 +14,7 @@ def process_text(lst):
     filter1 = lst[42:201] #cut out irrelevant text
     filter2 = list(filter(new_line_filter, filter1)) #filter the "\n\n\n"
     filter3 = []
+    filter4 = []
     for i in range(len(filter2)): 
         if ((i - 4) % 7 == 0) or ((i - 5) % 7 == 0): #cut out irrelevant column 5 and 6 
             pass
@@ -22,4 +23,6 @@ def process_text(lst):
             if a == '\xa0': #null leave information
                 a = "no-leave"
             filter3.append(a)
-    return filter3
+    for i in range(0, len(filter3), 5):
+        filter4.append(" | ".join(filter3[i:i+5]))
+    return filter4
