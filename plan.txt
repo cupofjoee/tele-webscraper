@@ -1,0 +1,15 @@
+Features:
+1. Interval checking
+2. Include the exact time the data is retrieved when fetching attendance
+3. Command to force check
+4. Self-check and report
+    - Special message when everyone has fingerprint
+    - auto terminate
+5. Move all the dates to the headline of the message (together with no. 2)
+6. Different block datas (3 diff account: hullet, moor buckley, rbp)
+
+Critical for deployment:
+1, 2, 4, 5
+
+Later stage:
+3, 6
