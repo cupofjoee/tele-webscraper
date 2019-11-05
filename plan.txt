@@ -1,7 +1,7 @@
 Features:
-1. Interval checking
-2. Include the exact time the data is retrieved when fetching attendance
-3. Command to force check
+1. Interval checking - done
+2. Include the exact time the data is retrieved when fetching attendance - done
+3. Command to force check - done
 4. Self-check and report
     - Special message when everyone has fingerprint
     - auto terminate
