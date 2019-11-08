@@ -16,18 +16,19 @@ def timer():
     threading.Timer(90, timer).start()
     global data
     start = datetime.now()
+    print("Fetching data")
     data = sc.fetch_data()
     end = datetime.now()
     runtime  = end - start
-    print("Fetching data")
+    print("Data fetched")
     print("Runtime: " + str(runtime))
 
 def start(update, context):
     update.message.reply_text("Kobe Bryant")
 
 def fetch(update, context):
-    for msg in data:
-        update.message.reply_text(msg)
+    for student in data:
+        update.message.reply_text(student)
 
 def main():
     updater = Updater(token = '***REMOVED***', use_context = True)
