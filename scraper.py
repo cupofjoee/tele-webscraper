@@ -4,7 +4,7 @@ from urllib.request import urlopen
 import http.cookiejar as cookie
 from datetime import datetime
 
-def fetch_data():
+def fetch_data(): #scrape attendance data from my hostel's website
     cj = cookie.CookieJar()
     br = mechanize.Browser()
     br.set_handle_robots(False)
@@ -13,8 +13,8 @@ def fetch_data():
     br.open("https://bms.ri.edu.sg/login.aspx")
 
     br.select_form(nr = 0)
-    br.form['txtLoginID'] = '***REMOVED***'
-    br.form['txtPassword'] = '***REMOVED***'
+    br.form['txtLoginID'] = ''
+    br.form['txtPassword'] = ''
     br.submit()
 
     attendance_url = "https://bms.ri.edu.sg/staff/Attendance.aspx"
@@ -26,11 +26,13 @@ def fetch_data():
     texts = []
     for td in soup.find_all('td'):
         texts.append(td.text)
+    
+    
 
     clean_data = process_text(texts)
     return clean_data
 
-def process_text(lst):   
+def process_text(lst): #process raw texts
     now = datetime.now()
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     
